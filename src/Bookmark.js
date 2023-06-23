@@ -13,6 +13,8 @@ export default function Bookmark() {
   const { result, isLoading, isError, error } = useEachData();
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log(ids)
+
   let classes = isOpen
     ? "hamOn flex flex-col items-center absolute shadow-sm top-0 h-screen bg-gray-200 z-10"
     : "hamOff flex flex-col items-center absolute shadow-sm top-0 h-screen";

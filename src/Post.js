@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeIds, deleteIds, changeBookmark } from "./store";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
 const Post = React.forwardRef(({ data }, ref) => {
-  const [isBookmark, setIsBookmark] = useState(false);
   const { ids } = useSelector((state) => {
     return { ids: state.data.ids };
   });
@@ -13,7 +12,7 @@ const Post = React.forwardRef(({ data }, ref) => {
 
   const handleClick = (item) => {
     dispatch(changeBookmark());
-    setIsBookmark((prev) => !prev);
+
     if (!includeId) {
       dispatch(changeIds(item.id));
     }

@@ -25,7 +25,7 @@ export default function useChangeLocalStorage() {
     }
 
     if (ids.length !== 0 || isEvenChange) localStorage.setItem("ids", ids);
-  }, [isBookm]);
+  }, [isBookm, isEvenChange, ids, dispatch]);
 
   return { ids };
 }

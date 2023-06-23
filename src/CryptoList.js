@@ -10,10 +10,9 @@ export default function CryptoList() {
   const { result, error, isError, isLoading, hasNextPage } = useData();
   const dispatch = useDispatch();
 
-  const { start, ids } = useSelector((state) => {
+  const { start } = useSelector((state) => {
     return {
       start: state.data.start,
-      ids: state.data.ids,
     };
   });
 
