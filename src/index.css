@@ -4,12 +4,16 @@
 
 .hamOff {
   width: 0px;
-  transition: .3s;
+  transition: 0.3s;
   overflow-x: hidden;
 }
 
 .hamOn {
   width: 250px;
-  transition: .3s;
+  transition: 0.3s;
   overflow-x: hidden;
+}
+
+.signPanel {
+  
 }

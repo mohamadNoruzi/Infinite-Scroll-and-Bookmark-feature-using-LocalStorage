@@ -8,6 +8,7 @@ const dataSlices = createSlice({
     isBookm: false,
     isEvenChange: false,
     wasBookmark: Boolean(),
+    user: null,
   },
   reducers: {
     changeStart(state, action) {
@@ -26,9 +27,9 @@ const dataSlices = createSlice({
       state.isBookm = !state.isBookm;
       state.isEvenChange = true;
     },
-    changeWasBookmark(state, action) {
-      
-      
+    changeWasBookmark(state, action) {},
+    setProfile(state, action) {
+      state.user = action.payload;
     },
   },
 });
@@ -39,5 +40,6 @@ export const {
   deleteIds,
   changeBookmark,
   changeWasBookmark,
+  setProfile,
 } = dataSlices.actions;
 export const dataReducer = dataSlices.reducer;

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { dataReducer, changeStart, changeIds, deleteIds, changeBookmark,changeWasBookmark } from "./slices/dataSlice";
+import { dataReducer, changeStart, changeIds, deleteIds, changeBookmark,changeWasBookmark, setProfile } from "./slices/dataSlice";
 
 const store = configureStore({
   reducer: {
@@ -7,4 +7,4 @@ const store = configureStore({
   },
 });
 
-export { store, changeStart, changeIds, deleteIds, changeBookmark,changeWasBookmark };
+export { store, changeStart, changeIds, deleteIds, changeBookmark,changeWasBookmark, setProfile };

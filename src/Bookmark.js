@@ -13,10 +13,8 @@ export default function Bookmark() {
   const { result, isLoading, isError, error } = useEachData();
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(ids)
-
   let classes = isOpen
-    ? "hamOn flex flex-col items-center absolute shadow-sm top-0 h-screen bg-gray-200 z-10"
+    ? "hamOn flex flex-col items-center absolute shadow-sm top-0 h-screen  bg-gray-200 z-10"
     : "hamOff flex flex-col items-center absolute shadow-sm top-0 h-screen";
 
   if (isError) return <h1>Error: {error.message}</h1>;
@@ -30,32 +28,31 @@ export default function Bookmark() {
   return (
     <>
       <div
-        className="w-28 h-10 py-2 px-1 my-4 fixed top-[10px] left-[10px] bg-blue-300 border-blue-400 hover:bg-blue-500 rounded-xl text-center cursor-pointer"
+        className="w-28 h-10 py-2 px-1 my-4 fixed top-[50px] left-[10px] bg-blue-300 border-blue-400 hover:bg-blue-500 rounded-xl text-center cursor-pointer"
         onClick={() => {
           dispatch(changeBookmark());
           setIsOpen(true);
         }}
       >
-        <h1 className="">
-          Bookmarks
-          <BsFillBookmarkStarFill />
-        </h1>
+        <h1>Bookmarks</h1>
       </div>
-      <div className={classes}>
-        <div
-          className="py-1 px-1 my-4 bg-blue-300 border-blue-400 hover:bg-blue-500 rounded-xl text-center cursor-pointer"
-          onClick={() => {
-            setIsOpen(false);
-          }}
-        >
-          <BsFillBookmarkXFill className="text-2xl" />
-        </div>
-        <div className="">{content}</div>
-        {isLoading && (
-          <div className="my-6">
-            <CircularProgress />
+      <div className="fixed top-0">
+        <div className={classes}>
+          <div
+            className="py-1 px-1 my-4 bg-blue-300 border-blue-400 hover:bg-blue-500 rounded-xl text-center cursor-pointer"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
+            <BsFillBookmarkXFill className="text-2xl" />
           </div>
-        )}
+          <div className="">{content}</div>
+          {isLoading && (
+            <div className="my-6">
+              <CircularProgress />
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
