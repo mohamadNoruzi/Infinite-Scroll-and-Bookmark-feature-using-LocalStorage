@@ -1,10 +1,10 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+
 
 const schema = z.object({
   name: z.string().min(3, { message: "must be at least 3 character" }),

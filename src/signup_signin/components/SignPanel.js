@@ -12,7 +12,7 @@ export default function SignPanel() {
         return <SignUp />;
 
       case "/sign-panel/Login":
-        return <Login/>;
+        return <Login />;
 
       default:
         return <SignUp />;

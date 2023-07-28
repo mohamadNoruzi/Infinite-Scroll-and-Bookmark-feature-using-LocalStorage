@@ -1,14 +1,12 @@
-import React from "react";
+import axios from "axios";
+import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/userContext";
-import { useContext } from "react";
 import { IoLogInOutline } from "react-icons/io5";
-import Cookies from "js-cookie";
 
 const schema = z.object({
   password: z.string().min(8),
@@ -16,7 +14,10 @@ const schema = z.object({
 });
 
 export default function Login() {
-  const { user } = useContext(UserContext);
+  const { user } = useSelector((state) => {
+    return { user: state.data.user };
+  });
+
   const navigate = useNavigate();
   const {
     register,
@@ -38,6 +39,7 @@ export default function Login() {
       if (data.error) {
         toast.error(data.error);
       } else {
+        Cookies.set("token", data.token);
         reset();
         navigate("/");
         navigate(0);
