@@ -15,5 +15,5 @@ react-hook-form\
 zod\
 axios\
 Authenticate with jwt\
-and also i made an express api. https://github.com/mohamadNoruzi/auth-api\
+and also i made an express api. https://github.com/mohamadNoruzi/auth-api  \
 & used mongodb for the database.\
