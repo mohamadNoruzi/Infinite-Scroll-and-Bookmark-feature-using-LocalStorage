@@ -14,6 +14,8 @@ react-router-dom\
 react-hook-form\
 zod\
 axios\
+infinite scroll\
+Bookmark features using LocalStorage\
 Authenticate with jwt\
 and also i made an express api. https://github.com/mohamadNoruzi/auth-api  \
 & used mongodb for the database.
